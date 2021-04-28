@@ -8,4 +8,6 @@ app.post("/users", (request, response) => {
   return response.json({ message: "Hello world!" });
 });
 
-app.listen(3333);
+app.listen(3333, () => {
+  console.log("Server is running. http://localhost:3333");
+});
