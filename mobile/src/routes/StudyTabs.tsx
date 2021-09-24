@@ -10,6 +10,7 @@ function StudyTabs() {
   return (
     <Navigator
       screenOptions={{
+        headerShown: false,
         tabBarStyle: {
           elevation: 0,
           shadowOpacity: 0,
