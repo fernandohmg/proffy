@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import React from "react";
+import React, { ReactNode } from "react";
 import { Image, Text, View } from "react-native";
 import { BorderlessButton } from "react-native-gesture-handler";
 import backIcon from "../../assets/images/icons/back.png";
@@ -9,9 +9,10 @@ import styles from "./styles";
 
 interface PageHeaderProps {
   title: string;
+  children?: ReactNode;
 }
 
-function PageHeader({ title }: PageHeaderProps) {
+function PageHeader({ title, children }: PageHeaderProps) {
   const { navigate } =
     useNavigation<NativeStackNavigationProp<any, "PageHeader">>();
 
@@ -28,6 +29,7 @@ function PageHeader({ title }: PageHeaderProps) {
         <Image source={logoImg} resizeMode="contain" />
       </View>
       <Text style={styles.title}>{title}</Text>
+      {children}
     </View>
   );
 }
